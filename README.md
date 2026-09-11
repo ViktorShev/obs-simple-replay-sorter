@@ -4,9 +4,10 @@ SRS automatically moves your OBS replay buffer clips into per-game subfolders, u
 
 ## Installation
 
-1. Download `srs.lua`.
-2. In OBS, go to **Tools → Scripts**.
-3. Click the **+** button and select `srs.lua`.
+1. [Download `obs-simple-replay-sorter.zip` from the releases tab](https://github.com/ViktorShev/obs-simple-replay-sorter/releases).
+2. Extract the contents of the archive to your desired folder.
+3. In OBS, go to **Tools → Scripts**.
+4. Click the **+** button and select `srs.lua`.
 
 No extra dependencies to install — everything the script needs is built into OBS or already present on Windows.
 
