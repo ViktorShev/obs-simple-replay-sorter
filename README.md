@@ -69,9 +69,11 @@ This is technically a misconfigured search & replacement, but it's handled grace
 
 Folder naming is decided in this order:
 
-1. **Known system windows** (Desktop, Explorer, etc.) — always mapped to a fixed built-in label, regardless of your search & replace list. You can expand / change these system overrides by editing the `SYSTEM_PROCESS_NAMES_OVERRIDE` map inside the script (`srs.lua`).
-2. **Your Search & Replace List**, checked top to bottom, first match wins.
-3. **Automatic fallback** — if nothing in your list matches, the raw executable name is used, title-cased automatically (e.g. `quake_3_arena` → `Quake 3 Arena`).
+1. **Known system windows** (Desktop, Explorer, etc.) — always mapped to a fixed built-in label, regardless of your search & replace list.
+
+   > You can expand / change these system overrides by editing the `SYSTEM_PROCESS_NAMES_OVERRIDE` map inside the script (`srs.lua`).
+3. **Your Search & Replace List**, checked top to bottom, first match wins.
+4. **Automatic fallback** — if nothing in your list matches, the raw executable name is used, title-cased automatically (e.g. `quake_3_arena` → `Quake 3 Arena`).
 
 ## Example list
 
