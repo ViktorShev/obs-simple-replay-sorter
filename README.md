@@ -82,4 +82,4 @@ overwatch = Overwatch 2
 r5apex = Apex Legends
 ```
 
-With this list, a detected executable like `r5apex_64.exe` sorts into a folder named `Apex Legends`, while an unrecognized game not in the list falls back to its automatically title-cased executable name.
+With this list, a detected executable like `r5apex_dx12.exe` sorts into a folder named `Apex Legends`, while an unrecognized game not in the list falls back to its automatically title-cased executable name.
