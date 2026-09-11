@@ -78,7 +78,7 @@ Folder naming is decided in this order:
 ## Example list
 
 ```
-valorant = VALORANT
+VALORANT
 deadlock = DL
 cs2 = Counter-Strike 2
 overwatch = Overwatch 2
