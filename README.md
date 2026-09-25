@@ -86,4 +86,4 @@ With this list, a detected executable like `r5apex_dx12.exe` sorts into a folder
 
 This Search & Replace list is essentially a lightweight version of what NVIDIA's ShadowPlay and AMD's ReLive does under the hood — it also relies on an internally maintained database mapping known game executables to friendly display names.
 
-The difference is that NVIDIA maintains that database centrally, across every supported title, as a company. I'm one developer without the resources to track and maintain exe-name mappings for every game that exists — so instead of trying to ship (and you having to constantly update) a giant built-in database, I just give you the mechanism to extend the list yourself for whatever you personally play.
+The difference is that NVIDIA maintains that database centrally, across every supported title, as a company. I'm one developer without the resources to track and maintain exe-name mappings for every game that exists — so instead of trying to ship (and you having to constantly update) a giant built-in database, I just give you the mechanism to make that list yourself for whatever you personally play.
