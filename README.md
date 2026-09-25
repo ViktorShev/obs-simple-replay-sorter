@@ -48,7 +48,7 @@ Example: the raw detected name `valorant-shipping64_final` contains `valorant`, 
 deadlock
 ```
 
-If a line has no `=` at all, the search text and the replacement are the same — the line above is shorthand for `deadlock = deadlock`. Useful when the executable name matches the game name exactly with no extra fluff and you just want to use your own casing (`e.g. DeadLock`) instead of relying on the default title-case.
+If a line has no `=` at all, the search text and the replacement are the same — the line above is shorthand for `deadlock = deadlock`. Useful when the executable name includes/is the "friendly" game name and you just want to use your own casing (e.g. DeadLock) instead of relying on the default title-case.
 
 ### A trailing `=` with nothing after it
 
@@ -81,8 +81,17 @@ Folder naming is decided in this order:
 VALORANT
 deadlock = DL
 cs2 = Counter-Strike 2
-overwatch = Overwatch 2
 r5apex = Apex Legends
+Ppssppwindows64 = PPSSPP
+Quake3 = Quake 3
+Diablo IV
 ```
 
 With this list, a detected executable like `r5apex_dx12.exe` sorts into a folder named `Apex Legends`, while an unrecognized game not in the list falls back to its automatically title-cased executable name.
+
+---
+## Fun fact!
+
+This Search & Replace list is essentially a lightweight version of what NVIDIA's ShadowPlay and AMD's ReLive does under the hood — it also relies on an internally maintained database mapping known game executables to friendly display names.
+
+The difference is that NVIDIA maintains that database centrally, across every supported title, as a company. I'm one developer without the resources to track and maintain exe-name mappings for every game that exists — so instead of trying to ship (and you having to constantly update) a giant built-in database, I just give you the mechanism to extend the list yourself for whatever you personally play.
