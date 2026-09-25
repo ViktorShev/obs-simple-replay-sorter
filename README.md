@@ -13,7 +13,7 @@ No extra dependencies to install — everything the script needs is built into O
 
 # Search & Replace list
 
-Simple Replay Sorter (SRS) names each sorted folder after whatever application had focus when the replay was saved. By default this is the raw executable name, title-cased — for example, `ApexLegends` will become `Apex Legends`. But sometimes certain games can have "ugly" executable names, for example, `valorant-shipping64_final.exe` would become `Valorant Shipping64 Final`. That's rarely the name you actually want on a folder.
+The script names each sorted folder after whatever application had focus when the replay was saved. By default this is the raw executable name, title-cased — for example, `apexlegends.exe` will become `Apex Legends`. But sometimes certain games can have "ugly" executable names, for example, `valorant-shipping64_final.exe` would become `Valorant Shipping64 Final`. That's rarely the name you actually want on a folder.
 
 The **Search & Replace list** lets you clean this up: define your own rules to turn messy or unrecognizable executable names into the folder names you actually want.
 
