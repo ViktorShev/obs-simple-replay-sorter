@@ -13,7 +13,9 @@ No extra dependencies to install — everything the script needs is built into O
 
 # Search & Replace list
 
-The script names each sorted folder after whatever application had focus when the replay was saved. By default this is the raw executable name, title-cased — for example, `apexlegends.exe` will become `Apex Legends`. But sometimes certain games can have "ugly" executable names, for example, `valorant-shipping64_final.exe` would become `Valorant Shipping64 Final`. This list allows you to clean this up and override the result.
+The script names each sorted folder after whatever application had focus when the replay was saved. By default this is the raw executable name, title-cased — for example, `apexlegends.exe` will become `Apex Legends`. 
+
+But sometimes certain games can have "ugly" executable names, for example, `valorant-shipping64_final.exe` would become `Valorant Shipping64 Final`. This list allows you to clean this up and override the result.
 
 ## Where to configure it
 
