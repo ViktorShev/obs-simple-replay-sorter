@@ -11,15 +11,15 @@ SRS automatically moves your OBS replay buffer clips into per-game subfolders, u
 
 No extra dependencies to install — everything the script needs is built into OBS or already present on Windows.
 
-# Search & Replace List
+# Search & Replace list
 
 Simple Replay Sorter (SRS) names each sorted folder after whatever application had focus when the replay was saved. By default this is the raw executable name, title-cased — for example, `ApexLegends` will become `Apex Legends`. But sometimes certain games can have "ugly" executable names, for example, `valorant-shipping64_final.exe` would become `Valorant Shipping64 Final`. That's rarely the name you actually want on a folder.
 
-The **Search & Replace List** lets you clean this up: define your own rules to turn messy or unrecognizable executable names into the folder names you actually want.
+The **Search & Replace list** lets you clean this up: define your own rules to turn messy or unrecognizable executable names into the folder names you actually want.
 
 ## Where to configure it
 
-In OBS, go to **Tools → Scripts**, select Simple Replay Sorter (`srs.lua`), and find the **Search & Replace List** field. It's a multiline text box — one rule per line.
+In OBS, go to **Tools → Scripts**, select Simple Replay Sorter (`srs.lua`), and find the **Search & Replace list** field. It's a multiline text box — one rule per line.
 
 ## Format
 
