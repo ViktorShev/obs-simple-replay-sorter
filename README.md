@@ -52,20 +52,20 @@ If a line has no `=` at all, the search text and the replacement are the same �
 
 ## Matching rules
 
-- Case-insensitive. `VALORANT`, `Valorant`, and `valorant` in your **search term** (left side of the `=`) all match the same way against the detected name.
-- Substring match, not exact match. Your search text just needs to appear *somewhere* in the detected executable name — it doesn't need to match the whole thing. This is what allows `valorant` to match a messy real-world name like `valorant-shipping64_final`.
-- Not a pattern/regex. Your search text is matched literally, A search text like `S.T.A.L.K.E.R.` matches that exact text, the periods are not interpreted as regex (the any character).
--*First match wins. Rules are checked in the order you wrote them, top to bottom, and the first line whose search text matches is used. If you have overlapping rules (e.g. both `counter` and `counter-strike 2`), put the more specific one first if you want it to take priority.
+- **Case-insensitive.** `VALORANT`, `Valorant`, and `valorant` in your **search term** (left side of the `=`) all match the same way against the detected name.
+- **Substring match, not exact match.** Your search text just needs to appear *somewhere* in the detected executable name — it doesn't need to match the whole thing. This is what allows `valorant` to match a messy real-world name like `valorant-shipping64_final`.
+- **Not a pattern/regex.** Your search text is matched literally, A search text like `S.T.A.L.K.E.R.` matches that exact text, the periods are not interpreted as regex (the any character).
+- **First match wins.** Rules are checked in the order you wrote them, top to bottom, and the first line whose search text matches is used. If you have overlapping rules (e.g. both `counter` and `counter-strike 2`), put the more specific one first if you want it to take priority.
 
 ## Precedence
 
 Folder naming is decided in this order:
 
-1.*Known system windows (Desktop, Explorer, etc.) — always mapped to a fixed built-in label, regardless of your search & replace list.
+1.**Known system windows (Desktop, Explorer, etc.)** — always mapped to a fixed built-in label, regardless of your search & replace list.
 
    > You can expand / change these system overrides by editing the `SYSTEM_PROCESS_NAMES_OVERRIDE` map inside the script (`srs.lua`).
-3. Search & Replace list, checked top to bottom, first match wins.
-4. Raw executable name — if nothing in your list matches, the raw executable name is used, title-cased automatically (e.g. `quake_3_arena` → `Quake 3 Arena`).
+3. **Search & Replace list** — checked top to bottom, first match wins.
+4. **Raw executable name** — if nothing in your list matches, the raw executable name is used, title-cased automatically (e.g. `quake_3_arena` → `Quake 3 Arena`).
 
 ## Example list
 
