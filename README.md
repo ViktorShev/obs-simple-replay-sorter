@@ -13,9 +13,7 @@ No extra dependencies to install — everything the script needs is built into O
 
 # Search & Replace list
 
-The script names each sorted folder after whatever application had focus when the replay was saved. By default this is the raw executable name, title-cased — for example, `apexlegends.exe` will become `Apex Legends`. But sometimes certain games can have "ugly" executable names, for example, `valorant-shipping64_final.exe` would become `Valorant Shipping64 Final`. That's rarely the name you actually want on a folder.
-
-The **Search & Replace list** lets you clean this up: define your own rules to turn messy or unrecognizable executable names into the folder names you actually want.
+The script names each sorted folder after whatever application had focus when the replay was saved. By default this is the raw executable name, title-cased — for example, `apexlegends.exe` will become `Apex Legends`. But sometimes certain games can have "ugly" executable names, for example, `valorant-shipping64_final.exe` would become `Valorant Shipping64 Final`. This list allows you to clean this up and override the result.
 
 ## Where to configure it
 
@@ -38,7 +36,7 @@ deadlock = DL
 cs2 = Counter-Strike 2
 ```
 
-If the detected executable name **contains** the text on the left (case-insensitive), the folder is named exactly what's on the right — used verbatim, with whatever casing/spacing you wrote.
+If the detected executable name **contains** the text on the left **(case-insensitive)**, the folder is named exactly what's on the right — used verbatim, with whatever casing/spacing you wrote.
 
 Example: the raw detected name `valorant-shipping64_final` contains `valorant`, so the clip is sorted into a folder named `VALORANT`.
 
@@ -48,32 +46,26 @@ Example: the raw detected name `valorant-shipping64_final` contains `valorant`, 
 deadlock
 ```
 
-If a line has no `=` at all, the search text and the replacement are the same — the line above is shorthand for `deadlock = deadlock`. Useful when the executable name includes/is the "friendly" game name and you just want to use your own casing (e.g. DeadLock) instead of relying on the default title-case.
+If a line has no `=` at all, the search text and the replacement are the same — the line above is shorthand for `deadlock = deadlock`. Useful when the executable name includes/is the "friendly" game name and you just want to use your own casing (e.g. `DeadLock`) instead of relying on the default title-case.
 
-### A trailing `=` with nothing after it
-
-```
-deadlock =
-```
-
-This is technically a misconfigured search & replacement, but it's handled gracefully anyway. If you write `=` and leave the right-hand side blank, it's treated the same as if you'd omitted the `=` entirely — the search text is used as its own replacement.
+> If you leave a trailing `=` with nothing after it, this is handled gracefully, falling back to the "search only" behaviour.
 
 ## Matching rules
 
-- **Case-insensitive.** `VALORANT`, `Valorant`, and `valorant` in your **search term** (left side of the `=`) all match the same way against the detected name.
-- **Substring match, not exact match.** Your search text just needs to appear *somewhere* in the detected executable name — it doesn't need to match the whole thing. This is what allows `valorant` to match a messy real-world name like `valorant-shipping64_final`.
-- **Not a pattern/regex.** Your search text is matched literally, character for character. A search text like `S.T.A.L.K.E.R.` matches that exact text, including the periods — it won't accidentally match unrelated text the way a regex `.` (any character) would.
-- **First match wins.** Rules are checked in the order you wrote them, top to bottom, and the first line whose search text matches is used. If you have overlapping rules (e.g. both `counter` and `counter-strike 2`), put the more specific one first if you want it to take priority.
+- Case-insensitive. `VALORANT`, `Valorant`, and `valorant` in your **search term** (left side of the `=`) all match the same way against the detected name.
+- Substring match, not exact match. Your search text just needs to appear *somewhere* in the detected executable name — it doesn't need to match the whole thing. This is what allows `valorant` to match a messy real-world name like `valorant-shipping64_final`.
+- Not a pattern/regex. Your search text is matched literally, A search text like `S.T.A.L.K.E.R.` matches that exact text, the periods are not interpreted as regex (the any character).
+-*First match wins. Rules are checked in the order you wrote them, top to bottom, and the first line whose search text matches is used. If you have overlapping rules (e.g. both `counter` and `counter-strike 2`), put the more specific one first if you want it to take priority.
 
 ## Precedence
 
 Folder naming is decided in this order:
 
-1. **Known system windows** (Desktop, Explorer, etc.) — always mapped to a fixed built-in label, regardless of your search & replace list.
+1.*Known system windows (Desktop, Explorer, etc.) — always mapped to a fixed built-in label, regardless of your search & replace list.
 
    > You can expand / change these system overrides by editing the `SYSTEM_PROCESS_NAMES_OVERRIDE` map inside the script (`srs.lua`).
-3. **Your Search & Replace List**, checked top to bottom, first match wins.
-4. **Automatic fallback** — if nothing in your list matches, the raw executable name is used, title-cased automatically (e.g. `quake_3_arena` → `Quake 3 Arena`).
+3. Search & Replace list, checked top to bottom, first match wins.
+4. Raw executable name — if nothing in your list matches, the raw executable name is used, title-cased automatically (e.g. `quake_3_arena` → `Quake 3 Arena`).
 
 ## Example list
 
